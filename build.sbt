@@ -23,7 +23,8 @@ val protoSettings = Seq(
     "io.grpc" % "grpc-netty" % scalapb.compiler.Version.grpcJavaVersion,
     "io.grpc" % "grpc-services" % scalapb.compiler.Version.grpcJavaVersion,
     "io.opencensus" % "opencensus-exporter-stats-prometheus" % "0.12.2",
-    "io.prometheus" % "simpleclient_httpserver" % "0.2.0",
+    "io.opencensus" % "opencensus-impl" % "0.12.2",
+    "io.prometheus" % "simpleclient_httpserver" % "0.3.0",
     "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion,
     "com.thesamet.scalapb" %% "scalapb-runtime-grpc" % scalapb.compiler.Version.scalapbVersion,
   )

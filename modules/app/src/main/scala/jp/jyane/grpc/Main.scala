@@ -4,6 +4,7 @@ import io.grpc.{Server, ServerBuilder}
 import io.grpc.examples.helloworld.GreeterGrpc.Greeter
 import io.grpc.examples.helloworld.{GreeterGrpc, HelloReply, HelloRequest}
 import io.grpc.protobuf.services.ProtoReflectionService
+import io.opencensus.contrib.grpc.metrics.RpcViews
 import io.opencensus.exporter.stats.prometheus.PrometheusStatsCollector
 import io.prometheus.client.exporter.HTTPServer
 
@@ -32,9 +33,10 @@ object Main {
   }
 
   def main(args: Array[String]): Unit = {
+    RpcViews.registerAllViews()
     PrometheusStatsCollector.createAndRegister()
     server.start()
-    val prometheusServer: HTTPServer = new HTTPServer("localhost", 9091, true)
+    val prometheusServer: HTTPServer = new HTTPServer(9091, true)
     server.awaitTermination()
     sys.addShutdownHook(stop())
   }

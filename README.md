@@ -1,0 +1,342 @@
+# grpc opencensus example scala
+
+## Run
+$ sbt app/run
+$ grpc_cli call localhost:20080 -l Greeter.SayHello 'name: "jyane"'
+
+## GET localhost:9091/metrics
+
+```
+# HELP opencensus_grpc_io_server_elapsed_time_cumulative Opencensus Prometheus metrics: Server elapsed time in msecs
+# TYPE opencensus_grpc_io_server_elapsed_time_cumulative histogram
+# HELP opencensus_grpc_io_client_uncompressed_request_bytes_cumulative Opencensus Prometheus metrics: Uncompressed Request bytes
+# TYPE opencensus_grpc_io_client_uncompressed_request_bytes_cumulative histogram
+# HELP opencensus_grpc_io_client_response_count_cumulative Opencensus Prometheus metrics: Count of response messages per client RPC
+# TYPE opencensus_grpc_io_client_response_count_cumulative histogram
+# HELP opencensus_grpc_io_server_response_count_cumulative Opencensus Prometheus metrics: Count of response messages per server RPC
+# TYPE opencensus_grpc_io_server_response_count_cumulative histogram
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 1.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_count{method="helloworld.Greeter/SayHello",} 1.0
+opencensus_grpc_io_server_response_count_cumulative_sum{method="helloworld.Greeter/SayHello",} 1.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 1.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_count_cumulative_count{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 1.0
+opencensus_grpc_io_server_response_count_cumulative_sum{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 3.0
+# HELP opencensus_grpc_io_client_uncompressed_response_bytes_cumulative Opencensus Prometheus metrics: Uncompressed Response bytes
+# TYPE opencensus_grpc_io_client_uncompressed_response_bytes_cumulative histogram
+# HELP opencensus_grpc_io_server_uncompressed_response_bytes_cumulative Opencensus Prometheus metrics: Uncompressed Response bytes
+# TYPE opencensus_grpc_io_server_uncompressed_response_bytes_cumulative histogram
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 1.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_count{method="helloworld.Greeter/SayHello",} 1.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_sum{method="helloworld.Greeter/SayHello",} 7.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 1.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_count{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 1.0
+opencensus_grpc_io_server_uncompressed_response_bytes_cumulative_sum{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 1795.0
+# HELP opencensus_grpc_io_server_uncompressed_request_bytes_cumulative Opencensus Prometheus metrics: Uncompressed Request bytes
+# TYPE opencensus_grpc_io_server_uncompressed_request_bytes_cumulative histogram
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 1.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_count{method="helloworld.Greeter/SayHello",} 1.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_sum{method="helloworld.Greeter/SayHello",} 7.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 1.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_count{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 1.0
+opencensus_grpc_io_server_uncompressed_request_bytes_cumulative_sum{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 64.0
+# HELP opencensus_grpc_io_client_error_count_cumulative Opencensus Prometheus metrics: RPC Errors
+# TYPE opencensus_grpc_io_client_error_count_cumulative summary
+# HELP opencensus_grpc_io_server_request_count_cumulative Opencensus Prometheus metrics: Count of request messages per server RPC
+# TYPE opencensus_grpc_io_server_request_count_cumulative histogram
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 1.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_count{method="helloworld.Greeter/SayHello",} 1.0
+opencensus_grpc_io_server_request_count_cumulative_sum{method="helloworld.Greeter/SayHello",} 1.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 1.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_count_cumulative_count{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 1.0
+opencensus_grpc_io_server_request_count_cumulative_sum{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 3.0
+# HELP opencensus_grpc_io_client_roundtrip_latency_cumulative Opencensus Prometheus metrics: Latency in msecs
+# TYPE opencensus_grpc_io_client_roundtrip_latency_cumulative histogram
+# HELP opencensus_grpc_io_client_server_elapsed_time_cumulative Opencensus Prometheus metrics: Server elapsed time in msecs
+# TYPE opencensus_grpc_io_client_server_elapsed_time_cumulative histogram
+# HELP opencensus_grpc_io_server_error_count_cumulative Opencensus Prometheus metrics: RPC Errors
+# TYPE opencensus_grpc_io_server_error_count_cumulative summary
+# HELP opencensus_grpc_io_server_response_bytes_cumulative Opencensus Prometheus metrics: Response bytes
+# TYPE opencensus_grpc_io_server_response_bytes_cumulative histogram
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 1.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_count{method="helloworld.Greeter/SayHello",} 1.0
+opencensus_grpc_io_server_response_bytes_cumulative_sum{method="helloworld.Greeter/SayHello",} 7.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 1.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_response_bytes_cumulative_count{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 1.0
+opencensus_grpc_io_server_response_bytes_cumulative_sum{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 1795.0
+# HELP opencensus_grpc_io_client_request_count_cumulative Opencensus Prometheus metrics: Count of request messages per client RPC
+# TYPE opencensus_grpc_io_client_request_count_cumulative histogram
+# HELP opencensus_grpc_io_server_server_latency_cumulative Opencensus Prometheus metrics: Latency in msecs
+# TYPE opencensus_grpc_io_server_server_latency_cumulative histogram
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 1.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_count{method="helloworld.Greeter/SayHello",} 1.0
+opencensus_grpc_io_server_server_latency_cumulative_sum{method="helloworld.Greeter/SayHello",} 31.910331
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 1.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_server_latency_cumulative_count{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 1.0
+opencensus_grpc_io_server_server_latency_cumulative_sum{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 92.623975
+# HELP opencensus_grpc_io_server_request_bytes_cumulative Opencensus Prometheus metrics: Request bytes
+# TYPE opencensus_grpc_io_server_request_bytes_cumulative histogram
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 1.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="helloworld.Greeter/SayHello",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_count{method="helloworld.Greeter/SayHello",} 1.0
+opencensus_grpc_io_server_request_bytes_cumulative_sum{method="helloworld.Greeter/SayHello",} 7.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 1.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_bucket{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 0.0
+opencensus_grpc_io_server_request_bytes_cumulative_count{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 1.0
+opencensus_grpc_io_server_request_bytes_cumulative_sum{method="grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo",} 64.0
+# HELP opencensus_grpc_io_client_request_bytes_cumulative Opencensus Prometheus metrics: Request bytes
+# TYPE opencensus_grpc_io_client_request_bytes_cumulative histogram
+# HELP opencensus_grpc_io_client_response_bytes_cumulative Opencensus Prometheus metrics: Response bytes
+# TYPE opencensus_grpc_io_client_response_bytes_cumulative histogram
+```
