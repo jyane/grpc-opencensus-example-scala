@@ -1,8 +1,11 @@
 # grpc opencensus example scala
 
 ## Run
+
+``` sh
 $ sbt app/run
 $ grpc_cli call localhost:20080 -l Greeter.SayHello 'name: "jyane"'
+```
 
 ## GET localhost:9091/metrics
 
