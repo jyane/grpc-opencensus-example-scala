@@ -1,6 +1,6 @@
 package jp.jyane.grpc
 
-import io.grpc.{Server, ServerBuilder}
+import io.grpc.{Server, ServerBuilder, Status}
 import io.grpc.examples.helloworld.GreeterGrpc.Greeter
 import io.grpc.examples.helloworld.{GreeterGrpc, HelloReply, HelloRequest}
 import io.grpc.protobuf.services.ProtoReflectionService
@@ -13,7 +13,9 @@ import scala.concurrent.{ExecutionContext, Future}
 class GreeterService extends Greeter {
   override def sayHello(request: HelloRequest): Future[HelloReply] = {
     val name = request.name
-    Future.successful(HelloReply(message = name))
+    println(name)
+    Future.failed(Status.INTERNAL.asRuntimeException())
+    //Future.successful(HelloReply(message = name))
   }
 }
 
